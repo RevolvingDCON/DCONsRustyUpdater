@@ -1,4 +1,4 @@
-# DCONs Rusty Updater
+# DCON's Rusty Updater
 <img align="right" src="https://i.imgur.com/eqw9VBX.png" width="200"/>
 
 > A Simple Windows tool for updating rust servers with support for [uMod](https://umod.org/games/rust) and remote dependency support.
@@ -83,4 +83,4 @@ goto start
 If you're interested in this project and want to help out, feel free to submit pull requests as usual.
 
 ## Contact
-You can contact me on Discord at: Revolving DCON#1337
+You can contact me on Discord at: [Revolving DCON#1337](https://discord.gg/5BqtyY4pvU)
