@@ -13,7 +13,7 @@ const path = require('path');
 const moveFile = require('move-file');
 
 (async function(){
-	const config = eval(fs.readFileSync('./config.js').toString());
+	const config = eval(fs.readFileSync(path.join(process.execPath,'../')+'config.js').toString());
 
 	global.boxlog=(msg,boxColor,textColor)=>console.log(col[boxColor||'green'](boxen(col[textColor||'white'](msg),{
 		padding: 1,
@@ -24,8 +24,6 @@ const moveFile = require('move-file');
 	    font: 'Standard',
 	    horizontalLayout: 'default',
 	    verticalLayout: 'default',
-	    // width: 80,
-	    // whitespaceBreak: true
 	}));
 	console.log(`${p.author} - 2021 v${p.version}\n`);
 
@@ -33,7 +31,6 @@ const moveFile = require('move-file');
 	mkdirp.sync(config.CachePath);
 
 	var steamCMD = config.OverrideUpdateCMD||`${config.SteamCMD}/steamcmd.exe +login anonymous +force_install_dir ${config.Path} +app_update 258550 +quit`;
-	// steamCMD = "dir";
 
 	boxlog("Starting Server Update");
 

@@ -17,7 +17,7 @@ module.exports = {
 	Dependencies:[
 		{
 			Enabled:true, // do we download the file
-			Name:"Umod", // name of the dependency (for console only)
+			Name:"uMod", // name of the dependency (for console only)
 			Type:"zip", // type of file so we know how to unpack it
 			FileName:"", // custom name for the saved file
 			DownloadURL:"https://umod.org/games/rust/download", // location of dependency

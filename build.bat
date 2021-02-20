@@ -1,2 +1,2 @@
 @echo off
-pkg -o ./dist/DCONsRustyUpdater.exe -t win .
+node build.js
