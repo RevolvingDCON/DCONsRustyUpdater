@@ -49,5 +49,38 @@ In the above example the `UnpackPath` property has a special keyword called `{Pa
 ### Updating
 To update the server, just run the `DCONsRustyUpdater.exe` and if you did everything correctly, the server will update and dependencies will install as expected.
 
+### Updating and Start
+You can include this in your start script with one line.
+```batch
+@echo off
+:start
+cmd D:Path/To/Updater/DCONsRustyUpdater.exe
+cmd RustDedicated.exe^
+ -batchmode^
+ -nographics^
+ -server.port 28015^
+ -server.hostname "[EU] DCON's Rusty World | x3 | BPs | Kits | Money | Custom | Balanced"^
+ -server.description "Drop the rock or die"^
+ -server.url ""^
+ -server.headerimage ""^
+ -server.maxplayers 1337^
+ -server.worldsize 4000^
+ -server.level "Procedural Map"^
+ -server.seed 27012021^
+ -server.identity dcon^
+ -server.saveinterval 600^
+ -rcon.password "nope"^
+ -rcon.ip 0.0.0.0^
+ -rcon.port 28016^
+goto start
+```
+
+## ToDo
+1. Streamline the boot process
+1. Include boot script in config
+
 ## Collaborating
-If you're interested in this project and want to help out, feel free to submit pull requests as usual
+If you're interested in this project and want to help out, feel free to submit pull requests as usual.
+
+## Contact
+You can contact me on Discord at: Revolving DCON#1337
