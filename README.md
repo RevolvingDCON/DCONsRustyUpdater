@@ -54,8 +54,8 @@ You can include this in your start script with one line.
 ```batch
 @echo off
 :start
-cmd D:Path/To/Updater/DCONsRustyUpdater.exe
-cmd RustDedicated.exe^
+D:Path/To/Updater/DCONsRustyUpdater.exe
+RustDedicated.exe^
  -batchmode^
  -nographics^
  -server.port 28015^
