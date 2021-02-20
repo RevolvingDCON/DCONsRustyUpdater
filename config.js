@@ -8,10 +8,6 @@ module.exports = {
 	// LEAVE BLANK UNLESS YOU KNOW WHAT YOU'RE DOING!
 	OverrideUpdateCMD:"",
 
-	// the path that downloaded files are stored to before moving them to the final location.
-	// you don't need to edit this unless you understand what you're doing
-	CachePath:"./cache",
-
 	// server addons / plugins we want to download every time we update the server
 	// note: these will be downloaded in the order they're displayed
 	Dependencies:[

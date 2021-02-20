@@ -13,7 +13,18 @@ const path = require('path');
 const moveFile = require('move-file');
 
 (async function(){
-	const config = eval(fs.readFileSync(path.join(process.execPath,'../')+'config.js').toString());
+	var node_args = process.argv.splice(2);
+	var rootPath = path.join(process.execPath,'../');
+	switch(node_args[0]){
+		case 'local':
+			rootPath = __dirname+'/';
+		break;
+	}
+
+	const config = eval(fs.readFileSync(rootPath+'config.js').toString());
+	const cachePath = rootPath+'cache/';
+
+	mkdirp.sync(cachePath);
 
 	global.boxlog=(msg,boxColor,textColor)=>console.log(col[boxColor||'green'](boxen(col[textColor||'white'](msg),{
 		padding: 1,
@@ -26,9 +37,6 @@ const moveFile = require('move-file');
 	    verticalLayout: 'default',
 	}));
 	console.log(`${p.author} - 2021 v${p.version}\n`);
-
-	config.CachePath = path.resolve(config.CachePath);
-	mkdirp.sync(config.CachePath);
 
 	var steamCMD = config.OverrideUpdateCMD||`${config.SteamCMD}/steamcmd.exe +login anonymous +force_install_dir ${config.Path} +app_update 258550 +quit`;
 
@@ -91,7 +99,7 @@ const moveFile = require('move-file');
 			dep.FileName = res.headers.raw()['content-disposition'][0].split('filename=')[1].replace(/['"]+/g, '').trim();
 		}
 
-		var tmpPath = path.resolve(config.CachePath+'/'+dep.FileName);
+		var tmpPath = path.resolve(cachePath+'/'+dep.FileName);
 		mkdirp.sync(dep.UnpackPath);
 
 		await streamPipeline(res.body, fs.createWriteStream(tmpPath));

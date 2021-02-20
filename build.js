@@ -12,7 +12,7 @@ const fs = require("fs-extra");
 const pkg = require("pkg");
 const pkgfetch = require("pkg-fetch");
 
-const customIconPath = "./icon.ico";
+const customIconPath = "./resources/img/icon.ico";
 const specificNodeVersion = "14.4.0";
 const originalPkgPrecompiledBinaries = path.resolve(`${pkgCachePath}/v2.6/fetched-v${specificNodeVersion}-win-x64.original`);
 const customizedPkgPrecompiledBinaries = path.resolve(`${pkgCachePath}/v2.6/fetched-v${specificNodeVersion}-win-x64`);
