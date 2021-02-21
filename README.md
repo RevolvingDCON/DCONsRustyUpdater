@@ -76,8 +76,8 @@ goto start
 ```
 
 ## ToDo
-1. Streamline the boot process
-1. Include boot script in config
+1. Streamline the boot process.
+1. Include boot script in config.
 
 ## Collaborating
 If you're interested in this project and want to help out, feel free to submit pull requests as usual.
